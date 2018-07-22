@@ -7,11 +7,13 @@
     2. Softmax
     3. SVM
     4. AdaBoostTree
-    5. 随机森林
-    5. gbdt
-    6. xgboost
-    7. lightGBM
-    8. ensemble集成模型（bagging，boosting，stacking）
+    5. 决策树（c45,ID3） 
+    6. 随机森林
+    7. gbdt
+    8. xgboost
+    9. lightGBM
+    10. ensemble集成模型（bagging，boosting，stacking）
+    11. 关联规则挖掘（apriori, fp-growth）
     
 2. 神经网络模型
     1. MLP
