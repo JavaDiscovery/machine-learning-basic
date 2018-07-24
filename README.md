@@ -14,6 +14,7 @@
     9. lightGBM
     10. ensemble集成模型（bagging，boosting，stacking）
     11. 关联规则挖掘（apriori, fp-growth）
+    12. 半监督模型，基于图的模型
     
 2. 神经网络模型
     1. MLP
