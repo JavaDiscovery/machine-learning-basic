@@ -15,6 +15,7 @@
     10. ensemble集成模型（bagging，boosting，stacking）
     11. 关联规则挖掘（apriori, fp-growth）
     12. 半监督模型，基于图的模型
+    13. 协同过滤
     
 2. 神经网络模型
     1. MLP
@@ -22,6 +23,7 @@
     3. RNN（LSTM）
     4. Attention
     5. GAN
+    6. word2vector原理
     
 3. 聚类模型
     1. kmeans
@@ -43,6 +45,7 @@
 2. 牛顿法，拟牛顿法
 3. 共轭梯度法
 4. 拉格朗日乘数法（约束优化问题）
+5. SMO优化算法（SVM）
 
 # 其他理论知识点
   1. 正则化
