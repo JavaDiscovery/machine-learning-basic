@@ -23,10 +23,15 @@
     3. RNN（LSTM）
     4. Attention
     5. GAN
-    6. word2vector原理
+    6. word2vector(层次霍夫曼树，负采样)， doc2vector
+    7. fasttext
+    8. ctr: LR, gbdt+LR, fm, ffm, PNN, Deep&Wide, DeepFm
+    9. rank: point, pair(rankSVM), list, 基于文本生成的方案。
+    10. online learning: FTRL(Follow-the-regularized-Leader)
     
 3. 聚类模型
     1. kmeans
+    2. 层次聚类
     
 4. 主题模型
     1. plsa 
@@ -48,10 +53,11 @@
 5. SMO优化算法（SVM）
 
 # 其他理论知识点
-  1. 正则化
+  1. 正则化，归一化
   2. 欠拟合与过拟合
-  3. 特征选择
+  3. 特征选择（卡方检验）
   4. 距离计算方法
+  5. BN，droupout
   
 # NLP理论
   1. 词法，句法，语法
