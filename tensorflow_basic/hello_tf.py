@@ -1,3 +1,8 @@
+# coding=utf-8
+# Author: zhengxiongfeng
+# mail: 657019943@qq.com
+#!/usr/bin/python
+
 import tensorflow as tf
 import numpy as np
 
