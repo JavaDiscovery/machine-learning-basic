@@ -8,6 +8,8 @@ from sklearn.utils import shuffle
 import tensorflow as tf
 import numpy as np
 import time
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 
 VOCAB_SIZE = 20000
 N_CLASS = 2
@@ -17,14 +19,14 @@ LR = 5e-3
 
 def sparse_tfidf(x):
     t0 = time.time()
-    count = np.zeros(len(x), VOCAB_SIZE)
+    count = np.zeros((len(x), VOCAB_SIZE))
     for i, indices in enumerate(x):
         for idx in indices:
             count[i, idx] += 1
     print ("%.2f secs ==> Document-Term Matrix.\n" % (time.time() - t0))
 
     t0 = time.time()
-    x= TfidfTransformer.fit_transform(count)
+    x= TfidfTransformer().fit_transform(count)
     print ("%.2f secs ==> TF-IDF transform.\n" % (time.time() - t0))
     return x
 
@@ -71,13 +73,6 @@ x_test = sparse_tfidf(x_test)
 estimator = tf.estimator.Estimator(model_fn)
 
 for _ in range(N_EPOCH):
-    estimator.tf.keras.datasets.imdb.load_data(num_words=VOCAB_SIZE)
-    x_train = sparse_tfidf(x_train)
-    x_test = sparse_tfidf(x_test)
-
-    estimator = tf.estimator.Estimator(model_fn)
-
-    for _ in range(N_EPOCH):
-        estimator.train(lambda : train_input_fn(*shuffle(x_train, y_train)))
-        y_pred = np.fromiter(estimator.predict(lambda : predict_input_fn(x_test)), np.int32)
-        print ("\nValidation Accuracy: %.4f" % (y_pred==y_test).mean())
+    estimator.train(lambda : train_input_fn(*shuffle(x_train, y_train)))
+    y_pred = np.fromiter(estimator.predict(lambda : predict_input_fn(x_test)), np.int32)
+    print ("\nValidation Accuracy: %.4f" % (y_pred==y_test).mean())
